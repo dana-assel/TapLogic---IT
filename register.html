@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title data-translate="rg1">Регистрация</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .form-container {
+            border: 1px solid #0a3d62;
+            padding: 25px;
+            width: 350px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #0a3d62;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #0a3d62;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #074274;
+        }
+
+        .message {
+            color: green;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .link a {
+            color: #0a3d62;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2 data-translate="rg1">Регистрация</h2>
+    <form onsubmit="event.preventDefault(); showSuccess();">
+        <label data-translate="rg10">Имя</label>
+        <input type="text" required>
+
+        <label data-translate="rg2">Фамилия</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label data-translate="lg2">Пароль</label>
+        <input type="password" required>
+
+        <label data-translate="rg4">Телефон</label>
+        <input type="text" required>
+
+        <label data-translate="rg5">Название компании</label>
+        <input type="text">
+
+        <label data-translate="rg6">Описание проекта</label>
+        <input type="text">
+
+        <button type="submit" data-translate="register">Зарегистрироваться</button>
+        <div class="message" id="success-msg" style="display:none;" data-translate="rg8">✅ Успешно зарегистрирован! Перенаправление...</div>
+    </form>
+    <div class="link">
+        Уже есть аккаунт? <a href="login.html">Войдите</a>
+    </div>
+</div>
+
+<script>
+    function showSuccess() {
+        const msg = document.getElementById("success-msg");
+        msg.style.display = "block";
+        setTimeout(() => {
+            window.location.href = "profile.html";
+        }, 2000); 
+    }
+</script>
+<script src="languages.js"></script>
+</body>
+</html>
